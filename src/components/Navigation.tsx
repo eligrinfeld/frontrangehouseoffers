@@ -12,17 +12,17 @@ const Navigation = () => {
   return (
     <nav className="fixed w-full bg-white shadow-sm z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
+        <div className="flex justify-between items-center h-24"> {/* Increased height from h-16 to h-24 */}
+          <div className="flex-1 flex justify-center md:justify-start"> {/* Changed positioning */}
             <img 
               src="https://frontrangehouseoffers.com/wp-content/uploads/2024/01/Front-Range-House-Offers-Logo.webp" 
               alt="Front Range House Offers" 
-              className="h-10"
+              className="h-16 md:h-20" /* Increased height from h-10 */
             />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center">
             <Button onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}>
               Get Your Offer
             </Button>
@@ -39,7 +39,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg animate-fade-up">
+          <div className="md:hidden absolute top-24 left-0 right-0 bg-white shadow-lg animate-fade-up"> {/* Updated top position */}
             <div className="px-4 py-2 space-y-2">
               <Button 
                 className="w-full" 
